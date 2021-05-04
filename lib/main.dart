@@ -1,8 +1,8 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_demo/data/profile_data.dart';
 import 'package:flutter_ui_demo/model/profile.dart';
+import 'package:flutter_ui_demo/ui/profile_body_section.dart';
+import 'package:flutter_ui_demo/ui/profile_head_section.dart';
 import 'package:flutter_ui_demo/ui/profile_top_section.dart';
 
 void main() => runApp(MyApp());
@@ -54,32 +54,58 @@ class _HomePageState extends State<HomePage> {
             child: ListView(
               children: [
                 ProfileTop(profile),
+                ProfileHead(profile),
+                Divider(
+                  color: Colors.blueGrey,
+                ),
+                ProfileBody(profile),
               ],
             ),
           ),
           Row(
             children: [
               Expanded(
-                child: ElevatedButton(
-                  onPressed: null,
-                  child: Text('별로에요'),
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.orange),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text('별로에요'),
+                    style: ButtonStyle(
+                      foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
+                      backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.white),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                            //side: BorderSide(color: Colors.red) // border line color
+                          )),
+                    ),
                   ),
                 ),
               ),
               Expanded(
-                child: ElevatedButton(
-                  onPressed: null,
-                  child: Text('괜찮아요'),
-                  style: ButtonStyle(
-                    backgroundColor:
-                    MaterialStateProperty.all<Color>(Colors.orange),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text('괜찮아요'),
+                    style: ButtonStyle(
+                      foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                      backgroundColor:
+                      MaterialStateProperty.all<Color>(Color(0xFF23b4be)),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20.0),
+                            //side: BorderSide(color: Colors.red) // border line color
+                          )),
+                    ),
                   ),
                 ),
               ),
             ],
+          ),
+          SizedBox(
+            height: 10,
           )
         ],
       ),

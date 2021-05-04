@@ -31,7 +31,7 @@ class _ProfileTopState extends State<ProfileTop> {
               height: 370,
               viewportFraction: 1,
               initialPage: 0,
-              autoPlay: true,
+              autoPlay: false,
               enableInfiniteScroll: true,
               onPageChanged: (index, reason) {
                 setState(() {
