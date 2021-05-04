@@ -3,7 +3,7 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_demo/data/profile_data.dart';
 import 'package:flutter_ui_demo/model/profile.dart';
-import 'package:flutter_ui_demo/profile_top_section.dart';
+import 'package:flutter_ui_demo/ui/profile_top_section.dart';
 
 void main() => runApp(MyApp());
 
